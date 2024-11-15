@@ -28,5 +28,19 @@ print statements, or for loops, they should function correctly and display outpu
 If you have a function, make sure the function is called and runs.
 
 The goal of this note is to ensure that all code in your Python file runs smoothly and that is has been tested.
-
++[^exclude.com]
 '''
+
+import re
+
+text = "Emails: user1@domain.com, user2@exclude.com, user3@domain.com"
+emails = re.findall(r"\b[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Z|a-z]{2,}\b", text)
+emailse = []
+for item in emails:
+    if "exclude.com" not in item:
+         emailse.append(item)
+
+print(emails)
+print("The solution with extraction is below: ")
+print(emailse)
+
